@@ -9,16 +9,19 @@ jobs:
          shell: /bin/bash -o pipefail
          command: |
                   set +e
-                  true
+                  true || error=true
                   sleep 5
-                  true
+                  true || error=true
                   sleep 5
-                  false
+                  false || error=true
                   sleep 5
-                  true
+                  true || error=true
                   echo "this happened" >> /tmp/happened
                   sleep 5
-                  true
+                  if [[ $error ]]
+                  then
+                      exit -1
+                  fi
       - run: 
          name: test2
          command: |
