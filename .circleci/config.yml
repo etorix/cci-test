@@ -9,11 +9,12 @@ jobs:
          shell: /bin/bash -eo pipefail
          command: |
                   true
-                  sleep 1000
+                  sleep 5
                   true
-                  sleep 1000
+                  sleep 5
                   false
-                  sleep 2000
+                  sleep 5
                   true
-                  sleep 1000
+                  echo "this happened"
+                  sleep 5
                   true
