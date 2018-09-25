@@ -6,8 +6,9 @@ jobs:
     steps:
       - run:
          name: test
-         shell: /bin/bash -eo pipefail
+         shell: /bin/bash -o pipefail
          command: |
+                  set +e
                   true
                   sleep 5
                   true
