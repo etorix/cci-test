@@ -10,16 +10,12 @@ jobs:
          command: |
                   set +e
                   true || error=true
-                  sleep 5
                   true || error=true
-                  sleep 5
                   false || error=true
-                  sleep 5
                   true || error=true
-                  echo "this happened" >> /tmp/happened
-                  sleep 5
                   if [[ $error ]]
                   then
+                      echo "FAILED"
                       exit -1
                   fi
       - run: 
