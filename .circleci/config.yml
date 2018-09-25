@@ -8,17 +8,7 @@ jobs:
          name: test
          shell: /bin/bash -o pipefail
          command: |
-                  true || error=true
-                  true || error=true
-                  false || error=true
-                  echo "wonderer"
-                  true || error=true
-                  if [[ $error ]]
-                  then
-                      echo "FAILED"
-                      exit -1
-                  fi
-      - run: 
-         name: test2
-         command: |
-                  cat /tmp/happened
+                  true
+                  true
+                  false
+                  true
