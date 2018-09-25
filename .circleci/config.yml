@@ -2,14 +2,18 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:8u181-jdk-stretch
-
-    
+      - image: circleci/openjdk:latest
     steps:
       - run:
          name: test
-         shell: /bin/bash -o pipefail
+         shell: /bin/bash -eo pipefail
          command: |
-                  false
                   true
+                  sleep 1000
+                  true
+                  sleep 1000
+                  false
+                  sleep 2000
+                  true
+                  sleep 1000
                   true
