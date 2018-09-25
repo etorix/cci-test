@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:latest
+      - image: circleci/ruby:latest
     steps:
       - run:
          name: test
@@ -15,6 +15,10 @@ jobs:
                   false
                   sleep 5
                   true
-                  echo "this happened"
+                  echo "this happened" >> /tmp/happened
                   sleep 5
                   true
+      - run: 
+         name: test2
+         command: |
+                  cat /tmp/happened
