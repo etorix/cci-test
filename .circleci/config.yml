@@ -8,9 +8,10 @@ jobs:
          name: test
          shell: /bin/bash -o pipefail
          command: |
-                  set +e
                   true || error=true
                   true || error=true
+                  false || error=true
+                  echo "wonderer"
                   true || error=true
                   if [[ $error ]]
                   then
