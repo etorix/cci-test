@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:latest
+      - image: circleci/mongo:latest
+        command: [--port 3001]
+
     steps:
       - run:
          name: test
