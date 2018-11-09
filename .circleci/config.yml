@@ -3,15 +3,10 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:latest
-      - image: circleci/mongo:latest
-        command: --port 3001
 
     steps:
       - run:
          name: test
-         shell: /bin/bash -o pipefail
-         command: |
-                  true
-                  true
-                  false
-                  true
+         command:  echo 'export TERM=myterm' >> $BASH_ENV
+      - run: echo $TERM                     
+                  
