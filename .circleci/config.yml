@@ -7,6 +7,6 @@ jobs:
     steps:
       - run:
          name: test
-         command:  echo 'export TERM=myterm' >> $BASH_ENV
+         command:  echo 'export TERM=xterm-256color' >> $BASH_ENV
       - run: echo $TERM                     
                   
